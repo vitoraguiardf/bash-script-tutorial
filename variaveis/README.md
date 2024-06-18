@@ -124,3 +124,37 @@ Fora da função, escopo Global
 OtherName: Vitor Aguiar
 message:
 ```
+
+### Tipos de Variáveis
+
+Bash script não é uma linguagem tipada, mas é possível declarar variáveis com tipos de dados usando a palavra reservada ```declare``` e uma flag indicando o tipo conforme a tabela seguinte.
+
+| Tipo          | Sintaxe               | Descrição                                                         |
+|---            |---                    |---                                                                |
+| Array         | declare -a varname    | Array indexado                                                    |
+| Matriz        | declare -A varname    | Matriz ou array associativo                                       |
+| Inteiro       | declare -i varname    | Valores numéricos inteiros                                        |
+| Readonly      | declare -r varname    | Mesmo que declarar com ```readonly```                             |
+| Export        | declare -x varname    | Exporta a variável para ser usada por todos os processos filhos   |
+
+Os comandos ```printenv``` e ```env``` podem ser usados para imprimir uma lista com todas as variáveis disponiveis no ambiente.
+
+### Convenção de Nomenclatura de Variáveis
+
+ - Para acessar, deve se usar o cifrão ```$``` prefixando o nome da variável.
+ - Pode ser composto por letras, números e underscores(sublinhados).
+ - São case-sensitive, portanto ```teste``` é diferente de ```Teste```.
+ - Não podem conter espaços.
+ - Recomenda-se o padrão **camelCase**
+
+ ### Variáveis de Shell
+
+ São variáveis definidas pelo Shell e fundamentais para o seu funcionamento.
+
+| Nome          | Descrição                                 |
+|---            |---                                        |
+| PWD           | Diretório de trabalho atual               |
+| PATH          | Diretórios de comandos                    |
+| UID           | Número de identificação do usuário        |
+| HOME          | Diretório home do usuário atual           |
+| SHELL         | Caminho do interpretador de comandos      |
